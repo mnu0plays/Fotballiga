@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+		table {
+			border-collapse: collapse;
+			width: 50%;
+		}
+
+		th, td {
+			text-align: left;
+			padding: 8px;
+			border: 1px solid black;
+		}
+
+		th {
+			background-color: #ddd;
+		}
+
+		.username {
+			width: 50%;
+		}
+
+		.id-col {
+			width: 50%;
+		}
+
+    .teams {
+      width: 50%;
+    }
+	</style>
+</head>
+<body>
+<h1>Hei sjef</h1>
+
+<h1>Registrerte Brukere</h1>
+
+<table>
+  
+<thead>
+  
+			<tr>
+				<th class="username">Navn</th>
+				<th class="id">ID</th>
+        <th>Delete?</th>
+			</tr>
+  
+		</thead>
+  {{#each users}}
+		
+		<tbody>
+      
+			<tr>
+				<td>{{this.username}}</td>
+				<td>{{this.id}}</td>
+        <td> <a href="/deluser?i={{this.id}}"> <button> Slett</button></a></td>
+        <td>{{this.points}}</td>
+        <td>{{this.team_name}}</td>
+        <td><form action="/points" method="POST">
+  <label>
+    Poeng:
+    <input type="hidden" name="id" value="{{this.id}}">
+    <input type="text" name="points" required>
+  </label>
+  <button type="submit">Lagre</button>
+</form>
+</td>
+
+
+			</tr>
+			
+		</tbody>
+    {{/each}}
+	</table>
+
+  
+
+
+  <table>
+<thead>
+			<tr>
+				<th class="teams">Team name</th>
+				<th class="strength">Strength</th>
+			</tr>
+		</thead>
+  {{#each teams}}
+		
+		<tbody>
+			<tr>
+				<td>{{this.team_name}}</td>
+				<td>{{this.strength}}</td>
+			</tr>
+			
+		</tbody>
+    {{/each}}
+	</table>
+
+</body>
+
+    
+</body>
+</html>

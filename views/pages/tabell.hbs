@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+			border-collapse: collapse;
+			width: 50%;
+            left: 50%;
+		}
+
+		th, td {
+			text-align: left;
+			padding: 8px;
+			border: 2px solid black;
+		}
+
+		th {
+			background-color: #ddd;
+		}
+
+		.username {
+			width: 50%;
+		}
+
+		.id-col {
+			width: 50%;
+		}
+
+    h1 {
+      right: 40%;
+    }
+	</style>
+    </style>
+</head>
+<body>
+    <h1> Tabell på hvor mange poeng ulike brukere har</h1>
+    <table id="tabellen">
+        {{#each users}}
+        <tr>
+            <td>{{this.username}}</td>
+            <td>{{this.points}}</td>
+        </tr>
+        {{/each}}
+    </table>
+    
+
+</body>
+</html>
