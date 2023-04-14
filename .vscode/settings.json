@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/9fa65c33-c212-4afa-97b9-235432737781/resourceGroups/utvikling/providers/Microsoft.Web/sites/nuur",
+    "appService.deploySubpath": "."
+}
